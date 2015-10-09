@@ -1,9 +1,9 @@
 plot2 <- function() {
-  #Load the sqldf package to selectively load the data
-  library(sqldf)
+	#Load the sqldf package to selectively load the data
+	library(sqldf)
   
-  #Read the data assuming the datafile is located in the present working directory in unzipped form
-  data <- read.csv.sql("household_power_consumption.txt", sql="select * from file where Date='1/2/2007' OR Date='2/2/2007'", header=TRUE, sep=";")
+	#Read the data assuming the datafile is located in the present working directory in unzipped form
+	data <- read.csv.sql("household_power_consumption.txt", sql="select * from file where Date='1/2/2007' OR Date='2/2/2007'", header=TRUE, sep=";")
   
 	#Change the class of date and time columns from factor to Date and Posixt
 	data$Time <- paste(data$Date, data$Time)
